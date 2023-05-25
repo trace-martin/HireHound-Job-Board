@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" modified="2023-05-24T03:12:59.493Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="BzuQxJ3aR8dLHj6MVzgx" version="21.3.3" type="device">
+  <diagram name="Page-1" id="9V3MwEwWgAzKZLOCRCjl">
+    <mxGraphModel dx="1434" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-1" target="wyVtTM9yeqU_SCKIZltD-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="115" />
+              <mxPoint x="320" y="115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-17" target="wyVtTM9yeqU_SCKIZltD-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-1" target="wyVtTM9yeqU_SCKIZltD-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-1" value="Home&lt;br&gt;&lt;br&gt;prompt login immediate&lt;br&gt;show search bar&lt;br&gt;Login button" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="30" width="120" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-2" target="wyVtTM9yeqU_SCKIZltD-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-2" value="Login/Create&lt;br&gt;&lt;br&gt;UserName&lt;br&gt;UserEmail (only on create)&lt;br&gt;UserPassword&lt;br&gt;&lt;br&gt;(Validate)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="30" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="wyVtTM9yeqU_SCKIZltD-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="400" as="targetPoint" />
+            <mxPoint x="590" y="270" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-7" value="User Login Data&lt;br&gt;User saved jobs data&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="215" width="120" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-10" value="chartjs" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-15" target="wyVtTM9yeqU_SCKIZltD-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-15" value="findWork" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-19" target="wyVtTM9yeqU_SCKIZltD-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-19" value="Search Jobs&lt;br&gt;Limited Func" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="250" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wyVtTM9yeqU_SCKIZltD-20" target="wyVtTM9yeqU_SCKIZltD-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-20" value="Limited Func:&lt;br&gt;no save&lt;br&gt;no charts&lt;br&gt;no profile" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="250" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wyVtTM9yeqU_SCKIZltD-17" value="Search bar&lt;br&gt;List Saved Jobs&lt;br&gt;Update name&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="470" width="120" height="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
