@@ -3,21 +3,21 @@
   <head>
     <title>My Website</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- Add your custom stylesheets -->
-    <link rel="stylesheet" href="/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    {{!-- <link rel="stylesheet" href="/styles.css"> --}}
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="/">My Website</a>
-          {{#if isAuthenticated}}
+          {{#if logged_in}}
             <div class="navbar-nav">
               <a class="nav-link" href="/userProfile">{{currentUser.username}}</a>
             </div>
           {{/if}}
           <div class="navbar-nav ms-auto">
-            {{#if isAuthenticated}}
+            {{#if logged_in}}
               <button id="profileBtn" class="nav-link btn btn-link">My Profile</button>
               <button id="jobsBtn" class="nav-link btn btn-link">My Jobs</button>
               <a class="nav-link" href="/logout">Logout</a>
@@ -32,6 +32,7 @@
     <main>
       <div id="contentContainer">
         {{!-- will be updated with handlebars --}}
+        {{{body}}}
       </div>
     </main>
 
@@ -40,6 +41,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/public/js/main.js"></script>
+    {{!-- <script src="/public/js/main.js"></script> --}}
   </body>
 </html>
