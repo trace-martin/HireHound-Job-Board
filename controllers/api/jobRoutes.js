@@ -4,23 +4,7 @@ const { Job, User } = require("../../models");
 // GET All Jobs by User ID
 router.get("/", async (req, res) => {
   try {
-    const allJobs = await Job.findAll({
-      include: [
-        {
-          model: User,
-        },
-      ],
-    });
-    res.json(allJobs);
-  } catch (error) {
-    res.json(err);
-  }
-});
-
-// GET Job by ID
-router.get("/:id", async (req, res) => {
-  try {
-    const allJobs = await Job.findAll({
+    const allJobs = await Job.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -33,17 +17,27 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// POST Job
+// GET Job by ID
 router.get("/:id", async (req, res) => {
   try {
-    const postJobs = await Job.findAll({
+    const allJobs = await Job.findByPk(req.params.id, {
       include: [
         {
           model: User,
         },
       ],
     });
-    res.json(postJobs);
+    res.json(allJobs);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+// POST Job - Posting the job into the database
+router.post("/", async (req, res) => {
+  try {
+    const saveJob = await Job.create(req.body);
+    res.json(saveJob);
   } catch (error) {
     res.json(error);
   }
