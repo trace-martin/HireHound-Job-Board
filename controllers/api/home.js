@@ -14,25 +14,26 @@
 const fetch = require('node-fetch');
 
 const searchJobs = async (searchText) => {
-    const baseUrl = 'https://findwork.dev/jobs';
-    const queryParam = new URLSearchParams({q: searchText})//text to filter search by
-});
 
-const url = $(baseUrl)?$(queryParam);
-
-try {
-    const response = await fetch(url);
-    if(response.ok){
+    const baseUrl = "https://findwork.dev/jobs";
+    const queryParam = new URLSearchParams({ q: searchText }); //text to filter search by
+  
+    const url = `${baseUrl}?${queryParam}`;
+  
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
         const data = await response.json();
         //process the data or perform further operations
         console.log(data);
-    }else{
-    console.error('Request failed with status:', response.status)
+      } else {
+        console.error("Request failed with status:", response.status);
+      }
+    } catch (error) {
+      console.error("A");
     }
-}catch (error){
-    console.error('A')
+};
 
-}
 
 //Usage
 searchJobs('web developer');
