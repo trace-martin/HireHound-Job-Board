@@ -14,6 +14,7 @@
 const fetch = require('node-fetch');
 
 const searchJobs = async (searchText) => {
+
     const baseUrl = "https://findwork.dev/jobs";
     const queryParam = new URLSearchParams({ q: searchText }); //text to filter search by
   
@@ -32,6 +33,7 @@ const searchJobs = async (searchText) => {
       console.error("A");
     }
 };
+
 
 //Usage
 searchJobs('web developer');
