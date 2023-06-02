@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const { User, Job } = require("../models");
-const withAuth = require("../utils/auth");
 
 // Prevent non logged in users from viewing the homepage
-//router.get('/', withAuth, async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -53,4 +51,16 @@ router.get("/savedJobs", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+      if(err) {
+          alert('There was an error logging you out!');
+          console.error('Error destroying session:', err);
+          return res.status(500).json({error: "Failed to logout"});
+      }
+      res.redirect('/');
+  });
+});
+
 module.exports = router;
