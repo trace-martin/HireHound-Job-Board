@@ -9,8 +9,8 @@
       {{/if}}
     </div>
   </div>
-  <div class="row">
-    <div class="col-6">
+  <div class="row vh-100">
+    <div class="col-6 h-75 overflow-y-scroll">
       {{#each jobsData.results as |job|}}
         <div class="card mb-2" data-job-data="{{to_json job}}">
           <div class="card-header">
@@ -32,7 +32,7 @@
         </div>
       {{/each}}
     </div>
-    <div class="col-6">
+    <div class="col-6 h-75 overflow-y-scroll">
       <div class="card visually-hidden" id="single-job-card">
         <div class="card-header d-flex justify-content-between">
           <div class="card-title" id="job-title"></div>
