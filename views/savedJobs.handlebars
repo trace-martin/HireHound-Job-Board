@@ -1,19 +1,25 @@
-{{#each jobs}}
-  <div class="job-container">
-    <div class="job-header">
-      <h3>{{name}}</h3>
-      <div class="remote-status">{{remote ? 'Remote: Yes' : 'Remote: No'}}</div>
-    </div>
-    <div class="job-description">
-      <p>{{description}}</p>
-    </div>
-    <div class="collapsible-container">
-      <button class="collapsible-button">View More</button>
-      <div class="collapsible-content">
-        <!-- Additional job details here -->
-        <p>Location: {{location}}</p>
-        <!-- Include any other job details you want to display -->
+{{#each jobDetails as |job|}}
+<div class="job-container">
+  <div class="job-header">
+    <h3>{{job.name}}</h3>
+    <div class="remote-status">{{job.remote ? 'Remote: Yes' : 'Remote: No'}}</div>
+  </div>
+  <div class="job-description">
+    <p>{{job.description}}</p>
+  </div>
+  <div class="collapsible-container">
+    <button class="collapsible-button">View More</button>
+    <div class="collapsible-content">
+      <!-- Additional job details here -->
+      <div class="card">
+        <div class="card-body">
+          <p>Here are your saved jobs.</p>
+
+        </div>
       </div>
+      <p>Location: {{job.location}}</p>
+      <!-- Include any other job details you want to display -->
     </div>
   </div>
+</div>
 {{/each}}
