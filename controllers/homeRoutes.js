@@ -1,3 +1,4 @@
+require('dotenv').config();
 const router = require("express").Router();
 const { User, Job } = require("../models");
 const withAuth = require("../utils/auth");
@@ -53,4 +54,25 @@ router.get("/savedJobs", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/search', async (req, res) => {
+  const searchText = req.query.q;
+  const apiUrl = `https://findwork.dev/api/jobs/?search=${searchText}&sort_by=relevance`
+
+  const response = await fetch(apiUrl, {
+    headers: {
+      'Authorization': `Token ${process.env.API_KEY}`,
+      'Access-Control-Allow-Origin': '*'
+    }
+  });
+
+  const jobsData = await response.json();
+
+  res.render('searchResults', {
+    jobsData,
+    logged_in: req.session.logged_in,
+    user_id: req.session.user_id
+  });
+});
+
 module.exports = router;
