@@ -1,7 +1,5 @@
-const { Job } = require('../models');
-const { Users } = require('../models');
+const { Job, Users } = require('../models');
 const sequelize = require('../config/connection');
-
 const jobData = [
     {
         role_name: "Associate/VP, Partnership",
@@ -36,7 +34,5 @@ const jobData = [
         user_id: 4,
     },
 ];
-
-const seedJobs = () => Job.bulkCreate(jobData);
-
-module.exports = seedJobs;
+// added async
+const seedJobs = async() => Job.bulkCreate(jobData);
