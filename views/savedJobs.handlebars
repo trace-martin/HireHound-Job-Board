@@ -1,8 +1,10 @@
+<h1>Hello World!</h1>
+
 {{#each jobDetails as |job|}}
 <div class="job-container">
   <div class="job-header">
-    <h3>{{job.name}}</h3>
-    <div class="remote-status">{{job.remote ? 'Remote: Yes' : 'Remote: No'}}</div>
+    <h3>{{job.role_name}}</h3>
+    {{!--<div class="remote-status">{{job.remote ? 'Remote: Yes' : 'Remote: No'}}</div>--}}
   </div>
   <div class="job-description">
     <p>{{job.description}}</p>
@@ -17,7 +19,7 @@
 
         </div>
       </div>
-      <p>Location: {{job.location}}</p>
+      <p>Location: {{job.company_name}}</p>
       <!-- Include any other job details you want to display -->
     </div>
   </div>
