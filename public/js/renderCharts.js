@@ -39,7 +39,7 @@ data.map((item) => {
   }
 });
 
-(data && data.length > 0) ? drawChart() : null;
+(data && data.length > 0) ? drawChart() : document.querySelector('a[data-bs-toggle=offcanvas]').classList.toggle('visually-hidden');
 
 function drawChart() {
   new Chart(jobsByCompanyDiv, {
