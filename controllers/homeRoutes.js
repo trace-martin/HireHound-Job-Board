@@ -41,10 +41,12 @@ router.get("/savedJobs", async (req, res) => {
         },
       ],
     });
-    const user = user.get({ plain: true });
-    console.log(user);
+    const user = userData.get({ plain: true });
+    //console.log(user);
+    //console.log(user.Jobs[0]);
     res.render("savedJobs", {
-      ...user,
+      jobDetails: user.Jobs,
+      //...user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
