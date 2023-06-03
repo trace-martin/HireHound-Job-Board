@@ -41,7 +41,8 @@ router.get('/logout', (req, res) => {
       }
       res.redirect('/');
   });
-    
+});
+
 //Goes to the saved job page. Gets all of the jobs attached to the user.
 router.get("/savedJobs", async (req, res) => {
   try {
