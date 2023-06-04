@@ -1,27 +1,43 @@
-<h1>Hello World!</h1>
-
-{{#each jobDetails as |job|}}
-<div class="job-container">
-  <div class="job-header">
-    <h3>{{job.role_name}}</h3>
-    {{!--<div class="remote-status">{{job.remote ? 'Remote: Yes' : 'Remote: No'}}</div>--}}
+<div class="container" data-user-id="{{user_id}}">
+  <div class="row">
+    <div class="col d-flex justify-content-between align-items-center">
+      <h1>Saved Jobs</h1>
+    </div>
   </div>
-  <div class="job-description">
-    <p>{{job.description}}</p>
-  </div>
-  <div class="collapsible-container">
-    <button class="collapsible-button">View More</button>
-    <div class="collapsible-content">
-      <!-- Additional job details here -->
-      <div class="card">
+  <div class="row vh-100">
+    <div class="col-6 h-75 overflow-y-scroll">
+      {{#each jobDetails as |job|}}
+        <div class="card mb-2" data-job-data="{{to_json job}}">
+          <div class="card-header">
+            <div class="card-title">
+              {{job.role}}
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Company: {{job.company_name}}</p>
+            <p class="card-text">
+              Remote:
+              {{#if job.remote}}
+                Yes
+              {{else}}
+                No
+              {{/if}}
+            </p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="col-6 h-75 overflow-y-scroll">
+      <div class="card visually-hidden" id="single-job-card">
+        <div class="card-header d-flex justify-content-between">
+          <div class="card-title" id="job-title"></div>
+        </div>
         <div class="card-body">
-          <p>Here are your saved jobs.</p>
-
+          <div id="job-description"></div>
         </div>
       </div>
-      <p>Location: {{job.company_name}}</p>
-      <!-- Include any other job details you want to display -->
     </div>
   </div>
 </div>
-{{/each}}
+
+<script src="js/savedJobs.js"></script>

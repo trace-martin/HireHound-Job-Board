@@ -16,4 +16,29 @@ jobCards.forEach((card) => {
         jobTitleDiv.textContent = jobData.role;
         jobDescriptionDiv.innerHTML = jobData.text;
     })
-})
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const saveJobButtons = document.querySelectorAll('.saveJobButton');
+  
+    saveJobButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        const jobId = e.target.dataset.jobId;
+        fetch(`/api/save/${jobId}`, {
+          method: 'POST',
+        })
+          .then((res) => {
+            if (res.ok) {
+              alert('Job saved!');
+            } else {
+              console.error('Error saving job:', res.statusText);
+              alert('Failed to save job. Please try again.');
+            }
+          })
+          .catch((error) => {
+            console.error('Error saving job:', error);
+            alert('Failed to save job. Please try again later');
+          });
+      });
+    });
+  });

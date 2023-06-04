@@ -37,7 +37,7 @@
         <div class="card-header d-flex justify-content-between">
           <div class="card-title" id="job-title"></div>
           {{#if logged_in}}
-            <button class="btn btn-primary">Save</button>
+            <button class="btn btn-primary saveJobButton" data-job-id="{{job.id}}">Save</button>
           {{else}}
             <a href="/login">Log in for more options</a>
           {{/if}}
