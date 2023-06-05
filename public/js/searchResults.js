@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
         user_id: userId,
       };
 
-      console.log(postBody);
-
       fetch(`/api/jobs/`, {
         method: "POST",
         body: JSON.stringify(postBody),
