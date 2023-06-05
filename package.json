@@ -9,5 +9,17 @@
     "express-session": "^1.17.3",
     "mysql2": "^3.3.3",
     "sequelize": "^6.31.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node ./seeds/jobSeed.js"
+  },
+  "name": "project-2",
+  "description": "![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

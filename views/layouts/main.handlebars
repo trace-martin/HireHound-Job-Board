@@ -11,15 +11,9 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="/">My Website</a>
-          {{#if logged_in}}
-            <div class="navbar-nav">
-              <a class="nav-link" href="/userProfile">{{currentUser.username}}</a>
-            </div>
-          {{/if}}
           <div class="navbar-nav ms-auto">
             {{#if logged_in}}
-              <button id="profileBtn" class="nav-link btn btn-link">My Profile</button>
-              <button id="jobsBtn" class="nav-link btn btn-link">My Jobs</button>
+              <a class="nav-link" href="/userProfile">My Profile</a>
               <a class="nav-link" href="/logout">Logout</a>
             {{else}}
               <a class="nav-link" href="/login">Login/Signup</a>

@@ -7,5 +7,5 @@ searchForm.addEventListener('submit', (event) => {
 
     const searchText = document.getElementById('search-box').value.trim();
 
-    document.location.assign(`/search?q=${searchText}`);
+    document.location.assign(`/?q=${searchText}`);
 });

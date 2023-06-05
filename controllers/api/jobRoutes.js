@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { Job, User } = require("../../models");
 const withAuth = require('../../utils/auth');
-const { retrieveSavedJobDetails } = require('../../utils/helpers');
 
 // GET All Jobs by User ID - Works
 // /api/jobs/users - This will get the user that is currently logged in their jobs.
@@ -63,39 +62,6 @@ router.post("/", async (req, res) => {
   } catch (error) {
     res.json(error);
   }
-});
-
-// saving jobs to render savedJobs.handle
-router.post('/api/save/:id', withAuth, async (req, res) => {
-  try {
-    const user = await User.findByPk(req.session.user_id);
-
-    if(!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
-
-    const job = await Job.findByPk(req.params.id);
-
-    if (!job) {
-      return res.status(404).json({ error: "Job not found" });
-    }
-
-    await user.addJob(job);
-    res.status(200).json({ message: 'Job saved successfully' });
-  } catch (err) {
-    console.error('Error saving job:', err);
-    res.status(500).json({ error: 'Failed to save job' });
-  }
-});
-
-router.get('/saved-jobs', withAuth, async (req, res) => {
-  try {
-    const jobDetails = await retrieveSavedJobDetails(req.session.user_id);
-    res.render('savedJobs', { jobDetails});
-} catch(error) {
-  console.error('Error rendering saved jobs:', error);
-  res.status(500).json({ error: 'Failed to render saved jobs' });
-}
 });
 
 // DELETE Job
