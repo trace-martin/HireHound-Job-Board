@@ -6,6 +6,16 @@ const userData = [
     email: "courtney@email.com",
     password: "password123",
   },
+  {
+    name: "Trace",
+    email: "trace@email.com",
+    password: "password123",
+  },
+  {
+    name: "Sergio",
+    email: "sergio@email.com",
+    password: "password123",
+  },
 ];
 const jobData = [
   {
@@ -26,7 +36,7 @@ const jobData = [
     website:
       "https://findwork.dev/MNNJZyM/graduate-intern-venture-capital-6-months-temp-to-perm-at-matrixport",
     date_posted: new Date(),
-    user_id: 1,
+    user_id: 2,
   },
   {
     role_name: "Financial Risk Analyst",
@@ -35,7 +45,7 @@ const jobData = [
     company_name: "Xapo",
     website: "https://findwork.dev/XlLqemX/financial-risk-analyst-at-xapo",
     date_posted: new Date(),
-    user_id: 1,
+    user_id: 3,
   },
   {
     role_name: "Technical Account Manager, Europe",
