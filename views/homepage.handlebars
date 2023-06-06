@@ -17,4 +17,148 @@
   </form>
 </div>
 
+{{#unless searchText}}
+<div class="card mx-auto mt-2" style="width: 30rem;">
+    <img class="card-img-top" src="/assets/hire-hound-high-resolution-logo-color-on-transparent-background.jpg" alt="Card image cap">
+    <div class="card-body centerMe">
+        <h3>Who are we?</h3>
+        <p class="card-text">We are a small but excited group of full stack web developers! We hope that you are able to find your future job and will spread the word about our amazing app! Please let us know if there are any issues that need to be addressed:</p>
+    </div>
+</div>
+
+<div class="card mx-auto mt-5 mb-5" style="width: 30rem;">
+    <div class="card-body centerMe">
+        <h3>Why use us?</h3>
+    </div>
+</div>
+
+<div class="card mx-auto mt-3 me" style="width: 30rem;">
+    <img class="card-img-top" src="/assets/earth-3537401_1280.jpg" alt="Card image cap">
+    <div class="card-body centerMe">
+        <h3>Jobs from all over the world!</h3>
+    </div>
+</div>
+
+<div class="card mx-auto mt-3 me" style="width: 30rem;">
+    <img class="card-img-top" src="/assets/startup-3267505_1280.jpg" alt="Card image cap">
+    <div class="card-body centerMe">
+        <h3>Narrow your search results!</h3>
+    </div>
+</div>
+
+<div class="card mx-auto mt-3 me" style="width: 30rem;">
+    <img class="card-img-top" src="/assets/team-4529717_1280.jpg" alt="Card image cap">
+    <div class="card-body centerMe">
+        <h3>Find your passion!</h3>
+    </div>
+</div>
+{{/unless}}
+
+{{#if searchText}}
+{{#unless jobsData}}
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-between align-items center">
+      <h1>Search Results</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>There are no jobs matching your search!</h2>
+    </div>
+  </div>
+</div>
+{{/unless}}
+{{/if}}
+
+{{#if jobsData}}
+<div class="container" data-user-id="{{user_id}}">
+  <div class="row">
+    <div class="col d-flex justify-content-between align-items-center">
+      <h1 class="justify-content-center">Search Results</h1>
+      {{#if logged_in}}
+      <a data-bs-toggle="offcanvas" href="#offcanvasMetrics">Metrics</a>
+      {{else}}
+      <p>Log in for more options</p>
+      {{/if}}
+    </div>
+  </div>
+  <div class="row vh-100">
+    <div class="col-6 h-75 overflow-y-scroll shadow-lg p-3 mb-5 bg-white rounded">
+      {{#each jobsData as |job|}}
+        <div class="card mb-2" data-job-data="{{to_json job}}">
+          <div class="card-header">
+            <div class="card-title">
+              {{job.role}}
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Company: {{job.company_name}}</p>
+            <p class="card-text">
+              Remote:
+              {{#if job.remote}}
+                Yes
+              {{else}}
+                No
+              {{/if}}
+            </p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="col-6 h-75 overflow-y-scroll">
+      <div class="card visually-hidden" id="single-job-card">
+        <div class="card-header d-flex justify-content-between shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="card-title" id="job-title"></div>
+          {{#if logged_in}}
+            <button class="btn btn-primary saveJobButton" data-job-id="{{job.id}}">Save</button>
+          {{else}}
+            <a href="/login">Log in for more options</a>
+          {{/if}}
+        </div>
+        <div class="card-body">
+          <div id="job-description"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{#if logged_in}}
+  <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasMetrics">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Metrics</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div
+        class="container"
+        id="charts"
+        data-jobs-data="{{to_json jobsData}}"
+      >
+          <div class="row">
+            <canvas id="jobs-by-company"></canvas>
+          </div>
+          <div class="row">
+            <canvas id="remote-jobs"></canvas>
+          </div>
+          <div class="row">
+            <canvas id="remote-jobs-by-city"></canvas>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {{#if jobsData}}
+  <script src="./js/renderCharts.js"></script>
+  {{/if}}
+{{/if}}
+
 <script src="js/search.js"></script>
