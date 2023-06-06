@@ -2,22 +2,10 @@
     <div class="profile-header">
         <h1>Welcome {{name}}!</h1>
     </div>
-
-    <body>
-        <h2>Search for jobs.</h2>
-        <div class="search">
-            <div class="search-body">
-                <div><input type="text"></div>
-                <div><button type="submit"><i class="fa fa-search"></i></button></div>
-            </div>
-        </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
 
 <h2>My Profile Information</h2>
-<div class="search">
+{{!-- <div class="search">
     <div class="search-body">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -29,31 +17,23 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
-</body>
-
-<h1>Hello World!</h1>
+</body> --}}
 
 {{#each jobDetails as |job|}}
-<div class="job-container">
+<div class="job-container shadow-lg p-3 mb-5 bg-white rounded">
     <div class="job-header">
         <h3>{{job.role_name}}</h3>
         {{!--<div class="remote-status">{{job.remote ? 'Remote: Yes' : 'Remote: No'}}</div>--}}
     </div>
-    <div class="job-description">
-        <p>{{job.description}}</p>
-    </div>
+
     <div class="collapsible-container">
-        <button class="collapsible-button">View More</button>
-        <div class="collapsible-content">
+        <button class="button btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-toggle="#collapseExample{{job.id}}" aria-expanded="false" aria-controls="collapseExample{{job.id}}">View More</button>
+        <div class="collapsible-content collapse" id="collapseExample{{job.id}}">
             <!-- Additional job details here -->
             <div class="card">
                 <div class="card-body">
-                    <p>Here are your saved jobs.</p>
-
-                </div>
+                    <p>{{job.description}}</p>
+                </div>               
             </div>
             <p>Location: {{job.company_name}}</p>
             <!-- Include any other job details you want to display -->

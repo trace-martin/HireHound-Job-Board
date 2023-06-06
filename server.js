@@ -5,6 +5,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const mime = require("mime");
 
 // Import objects/instances
 const routes = require("./controllers");
@@ -39,7 +40,13 @@ app.set("view engine", "handlebars");
 // Express server middleware required
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+// app.use("/assets", express.static(path.join(__dirname, "/public/assets")));
+app.use(express.static(path.join(__dirname, "public"), {
+  setHeaders: (res, filePath) => {
+    res.setHeader('Content-Type', mime.getType(filePath));
+  },
+}));
+app.use("/bootsrta", express.static(__dirname+"/node_modules/bootstrap/dist"));
 
 // Express server routes
 app.use(routes);

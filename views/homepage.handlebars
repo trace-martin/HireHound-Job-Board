@@ -1,5 +1,6 @@
-<div class="container my-4">
-  <form id="search-form" class="justify-content-center">
+
+<div class="container d-flex justify-content-center mt-5">
+  <form id="search-form" class="">
     <div class="row g-3 align-items-center">
       <div class="col-auto">
         <label for="search-box" class="col-form-label">Search:</label>
@@ -37,7 +38,7 @@
 <div class="container" data-user-id="{{user_id}}">
   <div class="row">
     <div class="col d-flex justify-content-between align-items-center">
-      <h1>Search Results</h1>
+      <h1 class="justify-content-center">Search Results</h1>
       {{#if logged_in}}
       <a data-bs-toggle="offcanvas" href="#offcanvasMetrics">Metrics</a>
       {{else}}
@@ -46,7 +47,7 @@
     </div>
   </div>
   <div class="row vh-100">
-    <div class="col-6 h-75 overflow-y-scroll">
+    <div class="col-6 h-75 overflow-y-scroll shadow-lg p-3 mb-5 bg-white rounded">
       {{#each jobsData as |job|}}
         <div class="card mb-2" data-job-data="{{to_json job}}">
           <div class="card-header">
@@ -70,7 +71,7 @@
     </div>
     <div class="col-6 h-75 overflow-y-scroll">
       <div class="card visually-hidden" id="single-job-card">
-        <div class="card-header d-flex justify-content-between">
+        <div class="card-header d-flex justify-content-between shadow-lg p-3 mb-5 bg-white rounded">
           <div class="card-title" id="job-title"></div>
           {{#if logged_in}}
             <button class="btn btn-primary saveJobButton" data-job-id="{{job.id}}">Save</button>
