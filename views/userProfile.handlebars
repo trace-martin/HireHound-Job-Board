@@ -1,44 +1,52 @@
-<div class="profile-container">
-    <div class="profile-header">
-        <h1>Welcome {{name}}!</h1>
-    </div>
-</div>
-
-<h2>My Profile Information</h2>
-
-{{!-- <div class="search">
-    <div class="search-body">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="container">
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Welcome {{name}}!</h1>
         </div>
     </div>
-</div>
-</body> --}}
 
-{{#each jobDetails as |job|}}
-<div class="job-container shadow-lg p-3 mb-5 bg-white rounded">
-    <div class="job-header">
-        <h3>{{job.role_name}}</h3>
-        {{!--<div class="remote-status">{{job.remote ? 'Remote: Yes' : 'Remote: No'}}</div>--}}
-    </div>
+    <h2>My Profile Information</h2>
 
-    <div class="collapsible-container">
-        <button class="button btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetails{{job.id}}" aria-expanded="false" aria-controls="collapsecollapseDetails{{job.id}}">View More</button>
-        <div class="collapsible-content collapse" id="collapseDetails{{job.id}}">
-            <!-- Additional job details here -->
-            <div class="card">
-                <div class="card-body">
-                    <p>{{job.description}}</p>
-                </div>               
+    <div class="search">
+        <div class="search-body">
+            <div class="mb-3">
+                <label for="name-update" class="form-label">Update Name</label>
+                <input type="text" class="form-control" id="name-update" value="{{name}}" required
+                    data-user-id="{{user_id}}">
             </div>
-            <p>Location: {{job.company_name}}</p>
-            <!-- Include any other job details you want to display -->
+            <div class="mb-3">
+                <button type="submit" id="sub-btn" class="btn btn-primary">Update</button>
+            </div>
         </div>
     </div>
+
+    <div class="row vh-100">
+        <div class="col-6 h-75 overflow-y-scroll shadow-lg p-3 mb-5 bg-white rounded">
+            {{#each jobDetails as |job|}}
+            <div class="card mb-2" data-job-data="{{to_json job}}">
+                <div class="card-header">
+                    <div class="card-title">
+                        {{job.role_name}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Company: {{job.company_name}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col-6 h-75 overflow-y-scroll">
+            <div class="card visually-hidden" id="single-job-card">
+                <div class="card-header d-flex justify-content-between shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-title" id="job-title"></div>
+                </div>
+                <div class="card-body">
+                    <div id="job-description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
-{{/each}}
+
+<script src="js/profile.js"></script>
