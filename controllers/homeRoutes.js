@@ -4,6 +4,16 @@ const { User, Job } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
+    res.render("homepage", { 
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/searchResults', async (req, res) => {
+  try {
     let searchText = req.query.q;
     let jobsData;
     if (searchText) {
@@ -19,14 +29,14 @@ router.get("/", async (req, res) => {
       jobsData = await response.json();
     }
 
-    res.render("homepage", { 
+    res.render("searchResults", { 
       jobsData: jobsData ? jobsData.results : jobsData,
       searchText,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id, 
     });
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(500).json(error);
   }
 });
 
