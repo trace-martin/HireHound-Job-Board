@@ -74,6 +74,7 @@ router.get("/userProfile", async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render("userProfile", {
+      user_id:req.session.user_id,
       jobDetails: user.Jobs,
       name: user.name,
       logged_in: req.session.logged_in,
