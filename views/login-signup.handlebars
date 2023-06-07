@@ -1,6 +1,6 @@
-<div id="login-container">
-    <h2>Login</h2>
+<div id="login-container" class="container d-flex justify-content-center mt-5">
     <form id="login-form">
+    <h2 class="d-flex justify-content-center mt-1">Login</h2>
         <label for="login-email">Email:</label>
         <input type="text" id="login-email" name="login-email">
 
@@ -8,14 +8,14 @@
         <input type="password" id="login-password" name="login-password">
 
         <button type="submit">Login</button>
+    <p class="d-flex justify-content-center mt-1">Don't have an account? <a href="#" id="toggle-signup">Sign Up</a></p>
     </form>
-    <p>Don't have an account? <a href="#" id="toggle-signup">Sign Up</a></p>
 </div>
 
-<div id="signup-container" class="visually-hidden">
+<div id="signup-container" class="visually-hidden card mx-auto mt-2">
+    <form id="signup-form" class="card mx-auto mt-2">
     <h2>Sign Up</h2>
-    <form id="signup-form">
-        <label for="signup-name">Name</label>
+        <label for="signup-name" class="ml-5">Name</label>
         <input type="text" id="signup-name" name="signup-name">
 
         <label for="signup-email">Email:</label>
@@ -25,8 +25,8 @@
         <input type="password" id="signup-password" name="signup-password">
 
         <button type="submit">Sign Up</button>
-    </form>
     <p>Already have an account? <a href="#" id="toggle-login">Login</a></p>
+    </form>
 </div>
 
 <script src="./js/login.js"></script>
